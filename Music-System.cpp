@@ -1,9 +1,8 @@
 // MusicSystem.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-#include <iostream>
-#include <fstream>
+
+#include<bits/stdc++.h>
 #include<Windows.h>
-#include <ctime>
 using namespace std;
 
 int main() {
@@ -32,7 +31,7 @@ int main() {
             ifstream fin;
             fin.open("Top10.txt", ios::in);
             char ch;
-            while (!fin.eof()) {
+            while (fin.eof() == 0) {
                 fin.get(ch);
                 cout << ch;
             }
@@ -45,19 +44,10 @@ int main() {
                 int i;
                 cin >> i;
                 if (i == 1) {
-                    //open the audio file
-                    mciSendString(TEXT("open \"1.mp3\" type mpegvideo alias mp3"), NULL, 0, NULL);
-
-
-                    //play the audio file and specify start and end positions 
-
-                    cout << "file playing....\n";
-                    time_t t1 = time(0);
-                    mciSendString(TEXT("play mp3 wait"), NULL, 0, NULL);
-                    time_t t2 = time(0);
-                    cout << "Duration of the play :" << t2 - t1 << " seconds." << endl;
-                    //close the audio file
-                    mciSendString(TEXT("close mp3"), NULL, 0, NULL);
+                    bool played = PlaySound(TEXT("1.wav"), NULL, SND_SYNC);
+                    cout << "hi: " << played << endl;
+                    // PlaySound("1.wav",NULL,SND_FILENAME|SND_ASYNC|SND_LOOP);
+                    // bool played = PlaySound("1.wav", NULL, SND_FILENAME);
                 }
 
             }

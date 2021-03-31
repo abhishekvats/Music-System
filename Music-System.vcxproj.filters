@@ -15,13 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Music-System\Music-System.cpp">
+    <ClCompile Include="Music-System.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="1.mp3">
-      <Filter>Source Files</Filter>
-    </Media>
   </ItemGroup>
 </Project>
